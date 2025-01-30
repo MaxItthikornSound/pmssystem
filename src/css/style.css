@@ -1,0 +1,1821 @@
+body {
+    background-image: url('../assets/image/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 18px;
+    font-family: Gabarito-VariableFont_wght;
+}
+
+@font-face {
+    font-family: Gabarito-VariableFont_wght;
+    src: url('../assets/font/Gabarito-VariableFont_wght.ttf');
+}
+
+fieldset, legend {
+    all: revert;
+    border-radius: 5px;
+}
+
+.container-fluid {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.wordwarp {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.text-clamp {
+    display: -webkit-box;           /* ใช้ Flexbox เพื่อรองรับการตัดคำ */
+    -webkit-line-clamp: 4;         /* จำกัดให้มีสูงสุด 4 บรรทัด */
+    -webkit-box-orient: vertical;  /* กำหนดการเรียงตัวเป็นแนวตั้ง */
+    overflow: hidden;              /* ซ่อนข้อความส่วนที่เกิน */
+    text-overflow: ellipsis;       /* แสดง ... เมื่อข้อความถูกตัด */
+}
+
+.colbody {
+    width: calc(100vw - 500px);
+}
+
+.colbodyemail {
+    width: calc(100vw - 300px);
+}
+
+.colbodymain {
+    width: calc(100vw - 300px);
+}
+
+.tables {
+    border: 2px solid #ffcb0b !important;
+    font-size: 15px;
+}
+
+.tablehead > * {
+    background-color: #ffcb0b !important;
+}
+.tablehead th {
+    background-color: #ffcb0b !important;
+}
+.searchtable {
+    width: 250;
+    
+}
+
+.selectpart {
+    width: 300px;
+    position: relative;
+}
+
+.selectgruops {
+    border-radius: 25px;
+    border: none;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1);
+    padding-bottom: unset !important;
+}
+
+.selectuser .css-13cymwt-control, .selectuser .css-t3ipsp-control {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.selectuser:hover .css-t3ipsp-control:hover, .selectgruops:focus .css-t3ipsp-control:focus {
+    width: 100%;
+    border: 2px solid #ffcb0b;
+    border-radius: 25px;
+}
+
+.selectyear {
+    width: 300px;
+    position: relative; /* หรือ absolute ขึ้นกับการใช้งาน */
+}
+
+.selectself {
+    width: 90%;
+}
+
+.selectself, .selectself .css-13cymwt-control, .selectuser .css-t3ipsp-control {
+    border-radius: 10px;
+}
+
+/* ---------------------- Style Genaral --------------- */
+.topcenter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.midpoint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftcenter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rightcenter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rightmid {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bottomright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.logo {
+    width: 140px;
+    border-radius: 100px;
+    filter: drop-shadow(0 0 100px rgba(255, 203, 10, 0.8));
+}
+
+.inputgroups {
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+}
+.borderbox{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.inputgroups_eval {
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.inputicon {
+    background-color: white;
+    border-radius: 25px;
+    border-color: white;
+}
+.css-l1vq2x-control{
+    height: 45px;
+    border: none !important; 
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.css-l1vq2x-control:hover{
+    border: none !important; 
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.css-l1vq2x-control:focus{
+    border: none !important; 
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1) !important;
+}
+.css-b62m3t-container{
+    border: none !important;
+}
+.inputtextsearch {
+    border: none;
+    border-radius: 25px;
+    width: 10%;
+}
+.inputtext {
+    border: none;
+    border-radius: 25px;
+    width: 10%;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inputtext:hover {
+    border: none;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.inputtext:focus {
+    border: none !important;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* กำหนดรูปแบบของ Radio */
+.custom-radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+  
+/* ซ่อน Radio Button ดั้งเดิม */
+.radio-input {
+    display: none;
+}
+  
+/* กำหนดสไตล์สำหรับตัว radio ใหม่ */
+.checkmark {
+    width: 24px;
+    height: 24px;
+    background-color: #ddd;
+    border-radius: 25%;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    transition: background-color 0.3s ease;
+}
+  
+/* กำหนดสไตล์เมื่อตัวเลือกถูกเลือกแล้ว */
+.radio-input:checked + .checkmark {
+    background-color: #1d1b20; /* สีพื้นหลังเมื่อเลือก */
+}
+  
+.radio-input:checked + .checkmark::after {
+    content: '✓'; /* สัญลักษณ์ติ๊กถูก */
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btns {
+    width: 80%;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btndark {
+    color: white;
+    background-color: #474747;
+    border: 1px solid #474747;
+}
+
+.btndark:hover {
+    color: white;
+    background-color: #575656;
+    border: 1px solid #575656;
+}
+
+.titletext {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* ----------------------- Navbar Page ------------------ */
+.navbars , .custom-navbar{
+    background-color: #ffcb0b !important;
+}
+
+.logonoair , .logonoair1{
+    height: 42px;
+    width: 150px;
+    margin-left: 2%;
+}
+
+.navtext {
+    color: black;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* ----------------------- Navbar User Page ------------------ */
+.me-auto {
+    margin-left: 31%;
+    font-weight: bold;
+    font-size: 21px;
+    
+}
+
+.home {
+    position: relative;
+}
+
+.home::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.5s;
+}
+  
+.home:hover::after {
+    width: 100%;
+}
+
+.self {
+    position: relative;
+    margin-left: 30px;
+}
+
+.self::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.5s;
+}
+  
+.self:hover::after {
+    width: 100%;
+}
+  
+.manager {
+    position: relative;
+    margin-left: 30px;
+}
+
+.manager::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.5s;
+}
+  
+.manager:hover::after {
+    width: 100%;
+}
+
+.staff {
+    position: relative;
+    margin-left: 30px;
+}
+
+.staff::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.5s;
+}
+.auto-resize{
+    resize: none;
+    overflow: hidden;
+    height: auto;
+}
+
+.staff:hover::after {
+    width: 100%;
+}
+.ic1{
+    height: 20px;
+}
+
+.ic {
+    position: absolute;
+    top: 8px;
+    right: 200px; /* Align to the right */
+    z-index: 2; /* Ensure it's above collapsing elements */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.ic:hover{
+    color:red;
+    transform: scale(1.2);
+}
+.ic label{
+    font-size: 30px;
+}
+.nav-link{
+    color: black;
+}
+.user-dropdown::after {
+    display: none !important;
+}
+/* ----------------------- Sidebar Page ------------------- */
+.sidebar {
+    display: flex; /* ใช้ Flexbox */
+    height: 100vh;
+    width: 250px;
+    background-color: #ffcb0b;
+    padding: unset;
+    position: fixed;
+    flex-direction: column; /* จัดเรียงในแนวตั้ง */
+}
+
+.btnsidebar, .btnsidebarlogout {
+    height: 70px;
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 0px !important;
+}
+
+.btnsidebar:hover, .active {
+    border: none;
+    color: white !important;
+    background-color: #000000 !important;
+}
+
+.btnsidebarlogout:hover {
+    border: none;
+}
+
+.buttons-container {
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 10px; /* เพิ่มระยะด้านบน (ถ้าจำเป็น) */
+    gap: 5px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.btnsidebarlogoutmoblie, .moblies {
+    display: none;
+}
+
+.logout-container {
+    margin-top: auto; /* ดันปุ่ม Logout ไปด้านล่างสุด */
+}
+
+.btnsidebarlogout {
+    color: red;
+}
+
+.btnsidebarlogout:hover {
+    color: white;
+    background-color: red;
+}
+
+.effecttext {
+    cursor: pointer;
+    position: relative;
+}
+
+.effecttext::after {
+    content: "";
+    height: 4px;
+    width: 0%;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: all 0.5s;
+}
+
+.btnsidebar:hover .effecttext::after, .btnsidebarlogout:hover .effecttext::after {
+    width: 100%; /* เพิ่มความยาวของเส้น */
+}
+.openbtn{
+    display: none;
+}
+.nav-bar2{
+    background-color: #ffcb0b;
+}
+
+  
+/* ----------------------- Login Page ------------------- */
+
+.forgetpassword {
+    cursor: pointer;
+    color: #140084;
+}
+
+/* ----------------------- Add User Page ------------------ */
+.adduser {
+    height: 240px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rowadduser {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.choosedfilecsv {
+    display: none;
+}
+  
+.custom-file-upload {
+    width: 250px;
+    display: inline-block;
+    background-color: #ffcb0b;
+    text-align: center;
+    border-radius: 25px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* ----------------------- Main Page, Manage Page ------------------ */
+.boxevent {
+    /* height: 250px; */
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px 5px rgba(128, 128, 128, 0.8);
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.titleevent {
+    font-size: 22px;
+}
+
+/* ----------------------- Dashboard Page ------------------ */
+.curvechart {
+    width: 700px;
+    max-width: 700px;
+    height: 400px;
+    max-height: 400px;
+}
+
+/* ----------------------- Evaluation Page ---------------------- */
+  
+h2 {
+    text-align: center;
+}
+
+.warpper {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+    z-index: 10;
+}
+
+.tab, .tabself {
+    cursor: pointer;
+    display: inline-block;
+    width: 150px;
+    font-size: 16px;
+    text-align: center;
+
+    background: #ffcb0b;
+    padding: 8px 20px;
+    border-radius: 15px 15px 0px 0px;
+    padding-bottom: 10px;
+}
+
+.tabself {
+    width: 170px;
+}
+
+.panels {
+    min-height:200px;
+    width: 100%;
+    background:#fffffff6;
+    box-shadow: 1rem 1rem 2rem #00000080;
+    border-radius: 3px;
+    border-top-right-radius: 40px; /* มุมบนขวา */
+    border-bottom-right-radius: 40px; /* มุมล่างขวา */
+    border-bottom-left-radius: 40px; /* มุมล่างซ้าย */
+    padding: 20px;  
+    overflow: hidden;
+}
+
+.panel {
+    display: none;
+    animation: fadein .8s;
+
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.panel-title {
+    font-size: 1.5em;
+    font-weight: bold
+}
+
+.radio{
+    display: none;
+}
+
+#one:checked ~ .panels #level_1, #two:checked ~ .panels #level_2, #three:checked ~ .panels #level_3, #one:checked ~ .panels #one-panel,  #two:checked ~ .panels #two-panel,  #three:checked ~ .panels #three-panel, .panels #self {
+    display: block
+}
+  
+#one:checked ~ .tabs #one-tab, #two:checked ~ .tabs #two-tab, #three:checked ~ .tabs #three-tab {
+    font-size: 18px;
+    color: #000;
+    background: #fffffff6;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* ----------------------- Event Page, Detail Event Page ---------------------- */
+
+/* Container Styling */
+.calendar-container {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+  
+/* Calendar Styling */
+.custom-calendar {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.custom-calendar .react-calendar__navigation {
+    background: #3a4b63;
+    color: white;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+  
+.custom-calendar .react-calendar__navigation button {
+    color: white;
+    font-size: 14px;
+    background-color: transparent !important;
+}
+  
+.custom-calendar .react-calendar__month-view__weekdays {
+    background: #3a4b63;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+  
+.custom-calendar .react-calendar__tile {
+    background: white;
+    color: black;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+}
+  
+.custom-calendar .react-calendar__tile--now {
+    background: #ffe680;
+    color: black;
+    font-weight: bold;
+}
+  
+.custom-calendar .react-calendar__tile--active {
+    background: #1087ff;
+    font-weight: bold;
+}
+
+/* Custom Calendar Styling */
+.custom-calendar .react-calendar__tile--now {
+    background: #ffe680 !important; 
+    color: black;
+    font-weight: bold;
+}
+  
+.react-calendar__tile.highlight {
+    background: #ffcb0b; /* สีพื้นหลังสำหรับวันมีกิจกรรม */
+    font-weight: bold;
+}
+  
+.react-calendar__tile.highlight:hover {
+    background: #45a049; /* สีเมื่อ hover */
+}
+
+.disabled-calendar .react-calendar__tile--active {
+    background: none !important;
+    font-weight: normal !important;
+}
+/* ----------------------- Manage Email Page ------------------- */
+.exemail {
+    height: 600px;
+}
+
+.bodyemail {
+    height: 520px;
+    background-color: white;
+}
+
+.textbodyemail{
+    font-size: 16px;
+}
+
+/* ----------------------- Home Page ------------------- */
+.event-top, .event{
+    font-size: 16px;
+}
+.event-top{
+    margin-top: 30px;
+}
+.flow-process {
+    gap: 2rem;
+    margin-top: 4em;
+    justify-content: center;
+    align-items: flex-start;
+}
+  
+.item {
+    background: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0px 0px 50px 5px rgba(128, 128, 128, 0.8);
+
+    padding: 1rem;
+    width: 30em;
+}
+
+.item.second-column {
+    margin-top: 22%;
+}
+
+.detailevent .modal-dialog .modal-content {
+    border-radius: 30px;
+}
+
+/* ----------------------- Self Page ------------------- */
+.lineborder {
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 3px rgba(128, 128, 128, 0.3);
+    
+}
+.row-divider , .row-divider1{
+   visibility: hidden;
+}
+.boxrow{
+    margin: 0 10px 30px 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+}
+.hidden-text{
+    visibility: hidden;
+}
+.visibility-text{
+    text-align: center;
+}
+.selectimpact{
+    width: 350px;
+}
+.gtopic1{
+    margin-left: 35px;
+}
+.gtopic2{
+    width: 64%;
+}
+.btn3{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0 0 0 ;
+}
+.item1 , .item2 , .item3, .item4{
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.item1{
+    width: 150%;
+    padding: 10px;
+}
+.item3{
+    width: 370px;
+    padding: 10px;
+}
+
+.item2{
+    width: 94%;
+}
+.item4{
+   margin-left: -150px;
+   width: 117%;
+}
+
+/* ตรางเกณฑ์การประเมิน */
+/* สไตล์พื้นฐานสำหรับตารางทั่วไป */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+/* สไตล์เฉพาะสำหรับ .table-rating */
+.table-rating {
+    border-collapse: collapse;
+    /* border: 1px solid #a2a2a2; */
+}
+
+.table-rating th,
+.table-rating td {
+    border: 1px solid #a2a2a2;
+    padding: 15px;
+    text-align: left;
+}
+
+.table-eval {
+    border-collapse: collapse;
+    border: #ffcb0b solid 2px;
+    font-size: 15px;
+}
+
+
+.table-eval tr:nth-child(odd) td {
+    background-color: #ffffff;
+}
+
+/* สไตล์เฉพาะสำหรับตารางอื่น */
+table th {
+    border: none;
+    padding: 15px;
+    text-align: left;
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table td {
+    background-color: white;
+    border: none;
+    padding: 15px;
+    text-align: left;   
+}
+
+/* สีพื้นหลังสำหรับแถวคี่และแถวคู่ */
+table tr:nth-child(odd) td {
+    background-color: #f4f4f4;
+}
+
+table tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+/* สไตล์สำหรับเซลล์แรกและเซลล์สุดท้าย */
+table td:first-child {
+    font-weight: bold;
+    background-color: #e6f7ff;
+}
+
+table td:last-child {
+    line-height: 1.6;
+}
+
+.topic{
+    font-size: 22px;
+}
+
+.topictablepart {
+    color: #414141;
+    font-size: 13px
+}
+
+.headname {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    padding: 20px 0 20px 0;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 5%;
+}
+
+.b-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    height: 90%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.bid {
+    margin-left: 15%;
+}
+
+.bname {
+    margin-left: 15%;
+}
+
+.bposition {
+    margin-left: 12%;
+}
+
+.bdepart {
+    margin-left: 6%;
+}
+
+.topichead {
+    font-size: 50px;
+    margin: 1em 0 1em 0;
+}
+
+/* ---------------Manage User --------------- */
+.iconmanageuser {
+    margin-right: 20px;
+}
+
+/* ----------------------- Staff Page ------------------- */
+.exportico{
+    height: 40px;
+    padding: 0 5px 0 5px;
+}
+.th-staff{
+    text-align: center;
+    vertical-align: middle;
+}
+.th-part{
+    text-align: center;
+}
+.td-staff-bg{
+    background-color: red !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+}
+.th-staff-self{
+    display: flex;
+    justify-content: space-evenly;
+}
+.th-staff-manage{
+    display: flex;
+    justify-content: space-evenly;
+}
+.th-part{
+    padding: 0;
+}
+.td-staff{
+    text-align: center;
+}
+.th-staff-self .td-part{
+    padding: 0;
+    font-weight: normal;
+    vertical-align: middle;
+}
+.th-staff-manage .td-part{
+    padding: 0;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.bodypdf {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.showpdf {
+    height: 88% !important;
+    width: 95%;
+    border-radius: 8px;
+    position: relative;
+}
+
+.btnpdf {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    color: white;
+    background-color: #ff5e57;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    z-index: 1200;
+}
+
+.pdf {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bodybtnpage {
+    width: 700px;
+    background-color: #303131;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    .titletext {
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .searchtable {
+        width: 230px;
+    }
+    .topichead{
+        text-align: center;
+        font-size: 30px;
+    }
+    .footer-text {
+        font-size: 12px;
+    }
+    /* ----------------------- Navbar Page ------------------ */
+    .navbars {
+        height: 60px;
+    }
+
+    .logonoair {
+        position: absolute; /* Keeps it outside the collapsing elements */
+        left: 50%; /* Moves to the center */
+        transform: translateX(-50%); /* Perfect centering */
+        height: 30px;
+        width: 120px;
+        margin: 0;
+        top: 12px;
+    }
+    .ic label {
+        font-size: 25px;
+    }
+    .navtext {
+        color: black;
+        font-size: 12px;
+        vertical-align: middle;
+    }
+    .me-auto {
+        margin: 0;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .self {
+        margin: 0;
+    }
+    .manager {
+        margin: 0;
+    }
+
+    .staff {
+        margin: 0;
+    }
+    .custom-navbar {
+        background-color: #ffcb0b !important;
+        position: relative;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Keeps logo centered */
+    }
+
+    .custom-toggle {
+        order: -1; /* Keeps the toggle aligned to the left */
+        position: relative; /* Normal positioning */
+        z-index: 1; /* Lower than logo and ic */
+        border: none !important;
+        background: none !important;
+    }
+    
+    .ic {
+        position: absolute;
+        top: 6px; /* Push down slightly */
+        right: 10px;/* Align to the right */
+         /* Ensures it's visible above other elements */
+    }
+
+    /* ----------------------- Sidebar Page ------------------- */
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+        z-index: 2;
+        left: 0;
+    }
+    
+    .effecttext {
+        font-size: 14px;
+    }
+    
+    .openbtn {
+        display: block;
+        position: relative;
+        top: 10px;
+        left: -245px;
+        background: none;
+        border: none;
+        color: black !important;
+        width: 10px;
+    }
+    
+    .openbtn:hover {
+        background: none;
+    }
+
+    .tabs {
+        z-index: 1;
+    }
+
+    .sidebar.open {
+        width: 180px; /* Or your desired width */
+    }
+
+    .colbody, .colbodyemail {
+        width: 100%;
+    }
+
+    .logo-side {
+        width: 100%;
+    }
+
+    .sidebar.open + .openbtn {
+        z-index: 3;
+    }
+
+    /* ----------------------- Add User Page ------------------ */
+    .adduser {
+        height: 860px;
+        width: 90%;
+        border-radius: 20px;
+        margin-top: 30px;
+    }
+
+    .rowadduser {
+        margin-left: unset;
+        margin-right: unset;
+    }
+
+    /* ----------------------- Dashboard Page ------------------ */
+    .curvechart {
+        width: 300px;
+        max-width: 300px;
+        height: 400px;
+        max-height: 400px;
+    }
+
+    /* ----------------------- Main Page, Manage Page ------------------ */
+    .boxevent {
+        /* height: 240px; */
+        font-size: 16px;
+    }
+
+    .titleevent {
+        font-size: 18px;
+    }
+
+    .tab, .tabself {
+        font-size: 10px;
+        width: 90px;
+    }
+
+
+    .tabself {
+        font-size: 16px;
+        width: 170px;
+    }
+
+    /* ----------------------- Manage Email Page ------------------- */
+    .exemail {
+        height: 550px;
+    }
+
+    .bodyemail {
+        height: 440px;
+    }
+
+    .textbodyemail{
+        font-size: 12px;
+    }
+
+    /* ----------------------- Home Page ------------------- */
+    .item.second-column {
+        margin-top: 0px;
+    }
+    .event-top, .event{
+        font-size: 15px;
+    }
+    .bottomright{
+        margin-top: 70px;
+    }
+
+    /* ----------------------- Self Page ------------------- */
+    .selectpart{
+        width: 150px;
+        font-size: 12px;
+    }
+    .selectimpact{
+        font-size: 12px;
+        width: 100%;
+    }
+    .gtopic1{
+        margin-left: 0px;
+    }
+
+    .row-divider , .row-divider1{
+        border: none;
+        height: 3px;
+        background-color: #ccc;
+        box-shadow: 0px 0px 1px 0px rgba(0,0,0,1);
+       visibility: visible;
+    }
+    .row-divider{
+        margin-bottom: 5px;
+    }
+    .row-divider1{
+        margin-bottom: 30px;
+    }
+    .comment{
+        font-size: 12px;
+    }
+    .boxrow{
+        display: flex;
+        flex-direction: column;
+    }
+    .topic-box{
+        font-size: 12px;
+        height: 10px;
+    }
+    .topic-comment{
+        font-size: 12px;
+    }
+    .gtopic1, .gtopic2{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .gtopic2{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .visibility-text{
+       margin-left: 28%;
+       width: 100%;
+       font-size: 10px;
+    }
+    .item1, .item2, .item3,.item4{
+        margin: 0px 3px 0px 3px;
+    }
+    .item1 , .item3 {
+        width: 98%;
+    }
+    .item2, .item4{
+        width: 153%;
+    }
+    .headname{
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        gap: 2px;
+    }
+    .detail{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 50px 0px 50px;
+    }
+    .b-detail{
+        width: 60%;
+        padding: 10px;
+    }
+    .table-rating th{
+        font-size: 10px;
+        text-align: center;
+    }
+    .table-rating td{
+        font-size: 10px
+    }
+    .tabself{
+        width: 35%;
+        font-size: 12px;
+        padding: 10px
+    }
+    #one:checked ~ .tabs #one-tab, #two:checked ~ .tabs #two-tab, #three:checked ~ .tabs #three-tab {
+        font-size: 12px;
+        padding-top: 15px;
+    }
+    .topic{
+        font-size: 12px;
+    }
+    .description{
+        font-size: 12px;
+    }
+    .selectself{
+        font-size: 12px;
+    }
+    .btns{
+        width: 80%;
+        display: block;
+        margin: auto auto 10px auto; 
+        font-size: 12px;
+    } 
+    .midpoint {
+        align-items: center; /* Centers content vertically */
+      }
+    .topic {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    /* ---------------Manage User --------------- */
+    .iconmanageuser {
+        margin-right: unset;
+    }
+     
+
+    /* ---------------------------manage page--------------------- */
+    .inputtextsearch{
+        font-size: 15px;
+    }
+    .table-head{
+        font-size: 8px;
+        white-space: nowrap;
+    }
+    .table-head2{
+        width: 90px;
+    }   
+    .tablebody{
+        font-size: 8px;
+    }
+    /* --------------staff sum------------- */
+    .selectyear {
+        width: 120%;
+        font-size: 8px;
+    }
+
+    .searchicon {
+        height: 10px;
+    }
+
+    .searchtable {
+        width: 80px;
+    }
+
+    .inputtextsearch {
+        font-size: 5px;
+    }
+
+    .exportico {
+        height: 25px;
+    }
+
+    .ic2 {
+        margin-top: 10px;
+    }
+    .dlyear {
+        margin-right: 20px;
+    }
+
+    .th-staff {
+        font-size: 8px ;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .th-part {
+        text-align: center;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    .th-staff-self {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .th-staff-manage {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .td-part {
+        padding: 0;
+        font-weight: normal;
+    }
+
+    .td-staff-bg {
+        width: 10px;
+    }
+
+    .mt-event {
+        margin-top: 70px;
+    }
+
+    .popupContent {
+        width: 95%;
+        height: 95%;
+    }
+
+    .closeButton {
+        font-size: 14px;
+    }
+
+    .bodypdf {
+        align-items: flex-start;
+    }
+
+    .btnpdf {
+        top: 55px;
+        right: 10px;
+    }
+    
+    .bodybtnpage {
+        bottom: unset !important;
+        top: 50px !important;
+        left: 50%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px){
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+    .iconmanageuser {
+        margin-right: 0;
+    }
+    /* ----------------------- Sidebar Page ------------------- */
+    .sidebar {
+        width: 0;
+        overflow: scroll;
+        z-index: 2;
+        left: 0;
+    }
+
+    .effecttext {
+        font-size: 15px;
+    }
+      
+    .openbtn {
+        display: block;
+        position: relative;
+        top: 10px;
+        left: -245px;
+        background: none;
+        border: none;
+        color: black !important;
+        z-index: 1;
+        width: 10px;
+    }
+      
+    .openbtn:hover {
+        background: none;
+    }
+      
+    .tabs {
+        z-index: 1;
+    }
+      
+    .sidebar.open {
+        width: 250px; /* Or your desired width */
+    }
+      
+    .colbody, .colbodyemail {
+        width: 100%;
+    }
+      
+    .logo-side {
+        width: 100%;
+    }
+      
+    .tab, .tabself {
+        font-size: 15x;
+        width: 120px;
+    }
+
+    .tabself {
+        font-size: 16px;
+        width: 170px;
+    }
+    /* ------------------------nav bar--------------------- */
+    .logonoair {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30px;
+        width: 120px;
+        margin: 0;
+        top: 12px;
+        z-index: 2; /* Ensure it's above the toggle */
+    }
+
+    .custom-toggle {
+        order: -1;
+        position: relative;
+        z-index: 1;
+        border: none !important;
+        background: none !important;
+        margin-right: auto; /* Align toggle to the left */
+    }
+
+    .ic {
+        position: absolute;
+        top: 4px;
+        right: 50px; /* Align to the right */
+        z-index: 2; /* Ensure it's above collapsing elements */
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .ic:hover {
+        color:red;
+        transform: scale(1.2);
+    }
+
+    .me-auto , .self , .manager, .staff {
+        margin: 0;
+    }
+    /* -----------------------home page--------------------- */
+    .item.second-column {
+        margin:0;
+    }
+
+    .detail {
+        font-size: 15px;
+    }
+
+    .bdepart {
+        margin-left: 9px;
+    }
+    /* -----------------------self page------------------------- */
+    .boxrow {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 0px 10px 0px 10px
+    }
+
+    .item1, .item3 {
+        width: 90%;
+    }
+
+    .item2 {
+        width: 133%;
+        margin-left: 35px;
+    }
+
+    .item4 {
+        width: 133%;
+        margin-left: 35px;
+    }
+
+    .visibility-text {
+        margin-left: 230px;
+    }
+
+    .item4 {
+        margin-top: 10px;
+    }
+
+    .selectimpact {
+        width: 100%;
+    }
+   
+}
+@media screen and (min-width: 1001px) and (max-width: 1200px){
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .iconmanageuser {
+        margin-right: 0;
+    }
+
+    .tab, .tabself {
+        font-size: 11px;
+        width: 110px;
+    }
+
+    .tabself {
+        font-size: 16px;
+        width: 170px;
+    }
+
+    #one:checked ~ .tabs #one-tab, #two:checked ~ .tabs #two-tab, #three:checked ~ .tabs #three-tab {
+        font-size: 14px;
+        padding-top: 15px;
+    }
+
+    .btns {
+        width: 80%;
+        display: block;
+        margin: auto auto 10px auto;
+    } 
+    /* ------------------nav bar------------- */
+    .logonoair {
+        position: absolute; /* Keeps it outside the collapsing elements */
+        left: 50%; /* Moves to the center */
+        transform: translateX(-50%); /* Perfect centering */
+        height: 30px;
+        width: 120px;
+        margin: 0;
+        top: 12px;
+    }
+
+    .custom-toggle {
+        order: -1; /* Keeps the toggle aligned to the left */
+        position: relative; /* Normal positioning */
+        z-index: 1; /* Lower than logo and ic */
+        border: none !important;
+        background: none !important;
+        left: 10px;
+    }
+    
+    .ic {
+        position: absolute;
+        top: 5px; /* Push down slightly */
+        right: 50px;/* Align to the right */
+    }
+
+    .me-auto {
+        margin: 0;
+    }
+
+    .self {
+        margin: 0;
+    }
+
+    .manager {
+        margin: 0;
+    }
+
+    .staff {
+        margin: 0;
+    }
+
+    /* ----------------------home page----------------- */
+    .item.second-column {
+        margin:0;
+    }
+
+    /* -----------------------self page------------------ */
+    .boxrow {
+        display: flex;
+        flex-direction: row;
+        gap: 20px
+    }
+
+    .item1, .item2, .item3, .item4 {
+        font-size: 15px;
+    }
+
+    .item1 {
+        width: 100%;
+    }
+
+    .item3 {
+        width: 100%;
+    }
+
+    .item4 {
+        margin-left: 50px;
+        width: 80%;
+    }
+
+    .bdepart {
+        margin-left: 10px;
+    }
+}
+@media screen and (min-width: 1201px) and (max-width: 1800px){
+    body {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .iconmanageuser {
+        margin-right: 0;
+    }
+
+    /* ------------------nav bar------------- */
+    .logonoair {
+        position: absolute; /* Keeps it outside the collapsing elements */
+       /* Moves to the center */
+        transform: translateX(-50%); /* Perfect centering */
+        height: 30px;
+        width: 120px;
+        top: 15px;
+    }
+
+    .ic {
+        position: absolute;
+        top: 8px; /* Push down slightly */
+        right: 15px;/* Align to the right */
+         /* Ensures it's visible above other elements */
+    }
+
+    .me-auto {
+        margin-left: 45%;
+    }
+
+    .self {
+        margin: 0;
+    }
+
+    .manager {
+        margin: 0;
+    }
+
+    .staff {
+        margin: 0;
+    }
+
+    /* ----------------------home page----------------- */
+    .flow-process {
+        gap: 2rem;
+        margin-top: 4em;
+        justify-content: center;
+        align-items: flex-start;
+    }
+      
+    .item {
+        background: #ffffff;
+        border-radius: 40px;
+        box-shadow: 0px 0px 50px 5px rgba(128, 128, 128, 0.8);
+    
+        padding: 1rem;
+        width: 30em;
+    }
+    
+    .item.second-column {
+        margin-top: 22%;
+    }
+    /* -----------------------self page------------------ */
+    .boxrow {
+        display: flex;
+        flex-direction: row;
+        gap: 20px
+
+    }
+
+    .item1, .item2, .item3, .item4 {
+        font-size: 15px;
+    }
+
+    .item1 {
+        width: 100%;
+    }
+
+    .item3 {
+        width: 100%;
+    }
+
+    .item4 {
+        margin-left: 50px;
+        width: 85%;
+    }
+
+}
