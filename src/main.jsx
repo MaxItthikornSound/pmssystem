@@ -32,6 +32,9 @@ import Editevent from './page/admin/editevent';
 import Manageeval from './page/admin/manageeval';
 import Manageemail from './page/admin/manageemail';
 
+// หน้า Not Found
+import Notfound from './notfound';
+
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
         <Routes>
@@ -64,6 +67,9 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/manageeval' element={<Manageeval />}></Route>
                 <Route path='/manageemail' element={<Manageemail />}></Route>
             </Route>
+
+            {/* สำหรับการเข้า URL ที่ไม่มีให้ */}
+            <Route path='*' element={<Notfound />}></Route>
         </Routes>
     </BrowserRouter>
 )
