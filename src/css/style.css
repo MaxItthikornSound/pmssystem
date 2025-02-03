@@ -40,12 +40,8 @@ fieldset, legend {
     width: calc(100vw - 500px);
 }
 
-.colbodyemail {
-    width: calc(100vw - 300px);
-}
-
-.colbodymain {
-    width: calc(100vw - 300px);
+.colbodyemail, .colbodymain { 
+    width: calc(100vw - 300px); 
 }
 
 .tables {
@@ -53,15 +49,11 @@ fieldset, legend {
     font-size: 15px;
 }
 
-.tablehead > * {
-    background-color: #ffcb0b !important;
-}
-.tablehead th {
+.tablehead > *, .tablehead th {
     background-color: #ffcb0b !important;
 }
 .searchtable {
-    width: 250;
-    
+    width: 250px;
 }
 
 .selectpart {
@@ -157,6 +149,7 @@ fieldset, legend {
     border: none;
     border-radius: 25px;
 }
+
 .borderbox{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: none;
@@ -172,22 +165,23 @@ fieldset, legend {
     border-radius: 25px;
     border-color: white;
 }
-.css-l1vq2x-control{
+
+.css-l1vq2x-control {
     height: 45px;
     border: none !important; 
     box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-.css-l1vq2x-control:hover{
+.css-l1vq2x-control:hover {
     border: none !important; 
     box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-.css-l1vq2x-control:focus{
+.css-l1vq2x-control:focus {
     border: none !important; 
     box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0.1) !important;
 }
-.css-b62m3t-container{
+.css-b62m3t-container {
     border: none !important;
 }
 .inputtextsearch {
@@ -387,7 +381,8 @@ fieldset, legend {
     height: 4px;
     transition: all 0.5s;
 }
-.auto-resize{
+
+.auto-resize {
     resize: none;
     overflow: hidden;
     height: auto;
@@ -396,7 +391,8 @@ fieldset, legend {
 .staff:hover::after {
     width: 100%;
 }
-.ic1{
+
+.ic1 {
     height: 20px;
 }
 
@@ -407,16 +403,20 @@ fieldset, legend {
     z-index: 2; /* Ensure it's above collapsing elements */
     transition: color 0.3s ease, transform 0.3s ease;
 }
-.ic:hover{
+
+.ic:hover {
     color:red;
     transform: scale(1.2);
 }
-.ic label{
+
+.ic label {
     font-size: 30px;
 }
-.nav-link{
+
+.nav-link {
     color: black;
 }
+
 .user-dropdown::after {
     display: none !important;
 }
@@ -496,10 +496,12 @@ fieldset, legend {
 .btnsidebar:hover .effecttext::after, .btnsidebarlogout:hover .effecttext::after {
     width: 100%; /* เพิ่มความยาวของเส้น */
 }
-.openbtn{
+
+.openbtn {
     display: none;
 }
-.nav-bar2{
+
+.nav-bar2 {
     background-color: #ffcb0b;
 }
 
@@ -565,7 +567,6 @@ fieldset, legend {
 }
 
 /* ----------------------- Evaluation Page ---------------------- */
-  
 h2 {
     text-align: center;
 }
@@ -734,17 +735,19 @@ h2 {
     background-color: white;
 }
 
-.textbodyemail{
+.textbodyemail {
     font-size: 16px;
 }
 
 /* ----------------------- Home Page ------------------- */
-.event-top, .event{
+.event-top, .event {
     font-size: 16px;
 }
-.event-top{
+
+.event-top {
     margin-top: 30px;
 }
+
 .flow-process {
     gap: 2rem;
     margin-top: 4em;
@@ -776,53 +779,63 @@ h2 {
     box-shadow: 0px 0px 3px 3px rgba(128, 128, 128, 0.3);
     
 }
-.row-divider , .row-divider1{
+
+.row-divider , .row-divider1 {
    visibility: hidden;
 }
-.boxrow{
+
+.boxrow {
     margin: 0 10px 30px 10px;
     display: flex;
     flex-direction: row;
     gap: 15%;
 }
-.hidden-text{
+
+.hidden-text {
     visibility: hidden;
 }
-.visibility-text{
+
+.visibility-text {
     text-align: center;
 }
-.selectimpact{
+
+.selectimpact {
     width: 350px;
 }
-.gtopic1{
+
+.gtopic1 {
     margin-left: 35px;
 }
-.gtopic2{
+
+.gtopic2 {
     width: 64%;
 }
-.btn3{
+
+.btn3 {
     display: flex;
     justify-content: center;
     margin: 5px 0 0 0 ;
 }
-.item1 , .item2 , .item3, .item4{
+.item1 , .item2 , .item3, .item4 {
     border-radius: 25px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.item1{
+.item1 {
     width: 150%;
     padding: 10px;
 }
-.item3{
+
+.item3 {
     width: 370px;
     padding: 10px;
 }
 
-.item2{
+.item2 {
     width: 94%;
 }
-.item4{
+
+.item4 {
    margin-left: -150px;
    width: 117%;
 }
@@ -840,11 +853,9 @@ table {
 /* สไตล์เฉพาะสำหรับ .table-rating */
 .table-rating {
     border-collapse: collapse;
-    /* border: 1px solid #a2a2a2; */
 }
 
-.table-rating th,
-.table-rating td {
+.table-rating th, .table-rating td {
     border: 1px solid #a2a2a2;
     padding: 15px;
     text-align: left;
@@ -964,43 +975,52 @@ table td:last-child {
 }
 
 /* ----------------------- Staff Page ------------------- */
-.exportico{
+.exportico {
     height: 40px;
     padding: 0 5px 0 5px;
 }
-.th-staff{
+
+.th-staff {
     text-align: center;
     vertical-align: middle;
 }
-.th-part{
+
+.th-part {
     text-align: center;
 }
-.td-staff-bg{
+
+.td-staff-bg {
     background-color: red !important;
     text-align: center;
     vertical-align: middle;
     width: 40px;
 }
-.th-staff-self{
+
+.th-staff-self {
     display: flex;
     justify-content: space-evenly;
 }
-.th-staff-manage{
+
+.th-staff-manage {
     display: flex;
     justify-content: space-evenly;
 }
-.th-part{
+
+.th-part {
     padding: 0;
 }
-.td-staff{
+
+.td-staff {
     text-align: center;
 }
-.th-staff-self .td-part{
+
+.th-staff-self .td-part {
     padding: 0;
     font-weight: normal;
     vertical-align: middle;
 }
-.th-staff-manage .td-part{
+
+.th-staff-manage .td-part {
     padding: 0;
     font-weight: normal;
     vertical-align: middle;
@@ -1083,10 +1103,12 @@ table td:last-child {
     .searchtable {
         width: 230px;
     }
-    .topichead{
+
+    .topichead {
         text-align: center;
         font-size: 30px;
     }
+    
     .footer-text {
         font-size: 12px;
     }
@@ -1104,22 +1126,27 @@ table td:last-child {
         margin: 0;
         top: 12px;
     }
+
     .ic label {
         font-size: 25px;
     }
+
     .navtext {
         color: black;
         font-size: 12px;
         vertical-align: middle;
     }
+
     .me-auto {
         margin: 0;
         font-weight: bold;
         font-size: 20px;
     }
+
     .self {
         margin: 0;
     }
+
     .manager {
         margin: 0;
     }
@@ -1127,6 +1154,7 @@ table td:last-child {
     .staff {
         margin: 0;
     }
+
     .custom-navbar {
         background-color: #ffcb0b !important;
         position: relative;
@@ -1186,11 +1214,7 @@ table td:last-child {
         width: 180px; /* Or your desired width */
     }
 
-    .colbody, .colbodyemail {
-        width: 100%;
-    }
-
-    .logo-side {
+    .colbody, .colbodyemail, .logo-side {
         width: 100%;
     }
 
@@ -1249,7 +1273,7 @@ table td:last-child {
         height: 440px;
     }
 
-    .textbodyemail{
+    .textbodyemail {
         font-size: 12px;
     }
 
@@ -1257,117 +1281,136 @@ table td:last-child {
     .item.second-column {
         margin-top: 0px;
     }
-    .event-top, .event{
+
+    .event-top, .event {
         font-size: 15px;
     }
-    .bottomright{
+
+    .bottomright {
         margin-top: 70px;
     }
 
     /* ----------------------- Self Page ------------------- */
-    .selectpart{
+    .selectpart {
         width: 150px;
         font-size: 12px;
     }
-    .selectimpact{
+
+    .selectimpact {
         font-size: 12px;
         width: 100%;
     }
-    .gtopic1{
+
+    .gtopic1 {
         margin-left: 0px;
     }
 
-    .row-divider , .row-divider1{
+    .row-divider , .row-divider1 {
         border: none;
         height: 3px;
         background-color: #ccc;
         box-shadow: 0px 0px 1px 0px rgba(0,0,0,1);
        visibility: visible;
     }
-    .row-divider{
+
+    .row-divider {
         margin-bottom: 5px;
     }
-    .row-divider1{
+
+    .row-divider1 {
         margin-bottom: 30px;
     }
-    .comment{
+
+    .comment {
         font-size: 12px;
     }
-    .boxrow{
+
+    .boxrow {
         display: flex;
         flex-direction: column;
     }
-    .topic-box{
+
+    .topic-box {
         font-size: 12px;
         height: 10px;
     }
-    .topic-comment{
+
+    .topic-comment {
         font-size: 12px;
     }
-    .gtopic1, .gtopic2{
+
+    .gtopic1, .gtopic2 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
-    .gtopic2{
+
+    .gtopic2 {
         margin-top: 10px;
         margin-left: 0px;
     }
-    .visibility-text{
+
+    .visibility-text {
        margin-left: 28%;
        width: 100%;
        font-size: 10px;
     }
-    .item1, .item2, .item3,.item4{
+
+    .item1, .item2, .item3,.item4 {
         margin: 0px 3px 0px 3px;
     }
+
     .item1 , .item3 {
         width: 98%;
     }
-    .item2, .item4{
+
+    .item2, .item4 {
         width: 153%;
     }
-    .headname{
+
+    .headname {
         display: flex;
         flex-direction: column;
         font-size: 13px;
         gap: 2px;
     }
-    .detail{
+
+    .detail {
         display: flex;
         justify-content: space-between;
         margin: 0px 50px 0px 50px;
     }
-    .b-detail{
+
+    .b-detail {
         width: 60%;
         padding: 10px;
     }
-    .table-rating th{
+
+    .table-rating th {
         font-size: 10px;
         text-align: center;
     }
-    .table-rating td{
+
+    .table-rating td {
         font-size: 10px
     }
-    .tabself{
+
+    .tabself {
         width: 35%;
         font-size: 12px;
         padding: 10px
     }
+
     #one:checked ~ .tabs #one-tab, #two:checked ~ .tabs #two-tab, #three:checked ~ .tabs #three-tab {
         font-size: 12px;
         padding-top: 15px;
     }
-    .topic{
+
+    .topic, .description, .selectself {
         font-size: 12px;
     }
-    .description{
-        font-size: 12px;
-    }
-    .selectself{
-        font-size: 12px;
-    }
-    .btns{
+
+    .btns {
         width: 80%;
         display: block;
         margin: auto auto 10px auto; 
@@ -1375,7 +1418,8 @@ table td:last-child {
     } 
     .midpoint {
         align-items: center; /* Centers content vertically */
-      }
+    }
+
     .topic {
         display: flex;
         align-items: center;
@@ -1386,22 +1430,25 @@ table td:last-child {
     .iconmanageuser {
         margin-right: unset;
     }
-     
 
     /* ---------------------------manage page--------------------- */
-    .inputtextsearch{
+    .inputtextsearch {
         font-size: 15px;
     }
-    .table-head{
+
+    .table-head {
         font-size: 8px;
         white-space: nowrap;
     }
-    .table-head2{
+
+    .table-head2 {
         width: 90px;
     }   
-    .tablebody{
+
+    .tablebody {
         font-size: 8px;
     }
+
     /* --------------staff sum------------- */
     .selectyear {
         width: 120%;
@@ -1427,6 +1474,7 @@ table td:last-child {
     .ic2 {
         margin-top: 10px;
     }
+
     .dlyear {
         margin-right: 20px;
     }
@@ -1495,9 +1543,11 @@ table td:last-child {
         background-size: cover;
         background-position: center center;
     }
+
     .iconmanageuser {
         margin-right: 0;
     }
+
     /* ----------------------- Sidebar Page ------------------- */
     .sidebar {
         width: 0;
@@ -1691,19 +1741,7 @@ table td:last-child {
         right: 50px;/* Align to the right */
     }
 
-    .me-auto {
-        margin: 0;
-    }
-
-    .self {
-        margin: 0;
-    }
-
-    .manager {
-        margin: 0;
-    }
-
-    .staff {
+    .me-auto, .self, .manager, .staff {
         margin: 0;
     }
 
@@ -1723,11 +1761,7 @@ table td:last-child {
         font-size: 15px;
     }
 
-    .item1 {
-        width: 100%;
-    }
-
-    .item3 {
+    .item1, .item3 {
         width: 100%;
     }
 
@@ -1795,7 +1829,6 @@ table td:last-child {
         background: #ffffff;
         border-radius: 40px;
         box-shadow: 0px 0px 50px 5px rgba(128, 128, 128, 0.8);
-    
         padding: 1rem;
         width: 30em;
     }
@@ -1803,6 +1836,7 @@ table td:last-child {
     .item.second-column {
         margin-top: 22%;
     }
+
     /* -----------------------self page------------------ */
     .boxrow {
         display: flex;
@@ -1815,11 +1849,7 @@ table td:last-child {
         font-size: 15px;
     }
 
-    .item1 {
-        width: 100%;
-    }
-
-    .item3 {
+    .item1, .item3 {
         width: 100%;
     }
 
