@@ -100,6 +100,16 @@ fieldset, legend {
     border-radius: 10px;
 }
 
+.imgnotfound{
+    width: 80%;
+    height: 80%;
+}
+
+.textnotfound{
+    text-align: center;
+    font-size: 30px;
+}
+
 /* ---------------------- Style Genaral --------------- */
 .topcenter {
     display: flex;
