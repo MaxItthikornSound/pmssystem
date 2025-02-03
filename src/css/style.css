@@ -1537,6 +1537,10 @@ table td:last-child {
         top: 50px !important;
         left: 50%;
     }
+
+    .textnotfound{
+        font-size: 22px;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1000px){
     body {
