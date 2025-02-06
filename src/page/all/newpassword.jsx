@@ -105,7 +105,7 @@ const Newpassword = () => {
                             <b style={{fontSize: '30px'}}>Create New Password</b>
                         </Col>
                         <Col md={12} className='midpoint mt-3'>
-                            <Form style={{width: '80%'}}>
+                            <Form style={{width: '80%'}} onSubmit={(e) => e.preventDefault()}>
                                 <Form.Group>
                                     <Form.Label><b>Password</b></Form.Label>
                                     <InputGroup className='inputgroups' id='inputgroups_password'>
@@ -119,7 +119,7 @@ const Newpassword = () => {
                             <label style={{color: 'red'}}>Please enter the Password correctly.</label>
                         </Col>
                         <Col md={12} className='midpoint mt-3'>
-                            <Form style={{width: '80%'}}>
+                            <Form style={{width: '80%'}} onSubmit={(e) => { e.preventDefault(); btncreatenewpassword(); }}>
                                 <Form.Group>
                                     <Form.Label><b>Confirm Password</b></Form.Label>
                                     <InputGroup className='inputgroups' id='inputgroups_passwordconfirm'>
