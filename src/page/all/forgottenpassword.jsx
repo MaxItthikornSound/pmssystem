@@ -11,7 +11,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 
 // การนำเข้าหน้า Page เพื่อ Link ไปหน้าถัดไป และการ Include ไฟล์เสริมที่เราสร้างขึ้นมา
-import Navbar from '../component/navbar/navbaruser';
+import Navbar from '../component/navbar/navbar';
 import { validateEmail, checkfilteremail } from '../component/fnc';
 import { sendemail } from '../component/connectdatabase';
 import { alertsmall, loadingotp } from '../component/sweetalerttwo';
@@ -94,10 +94,10 @@ const Forgettenpassword = () => {
                         <Col md={12} className='midpoint mt-3'>
                             <Form style={{width: '80%'}}>
                                 <Form.Group>
-                                    <Form.Label><b>Nok ID</b></Form.Label>
+                                    <Form.Label><b>Email</b></Form.Label>
                                     <InputGroup className='inputgroups' id='inputgroups_email'>
                                         <InputGroup.Text className='inputicon'><BiEnvelope /></InputGroup.Text>
-                                        <Form.Control type='text' id='email_forget' className='inputtext' onChange={(e) => { txtonchange(e); checkfilteremail(e); }} placeholder='Enter your Nok ID' />
+                                        <Form.Control type='text' id='email_forget' className='inputtext' onChange={(e) => { txtonchange(e); checkfilteremail(e); }} placeholder='Enter your Email' />
                                     </InputGroup>
                                 </Form.Group>
                             </Form>
