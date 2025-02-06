@@ -92,7 +92,7 @@ const Forgettenpassword = () => {
                             <b style={{fontSize: '30px'}}>Forgotten Password</b>
                         </Col>
                         <Col md={12} className='midpoint mt-3'>
-                            <Form style={{width: '80%'}}>
+                            <Form style={{width: '80%'}} onSubmit={(e) => { e.preventDefault(); btnforgetpassword(); }}>
                                 <Form.Group>
                                     <Form.Label><b>Email</b></Form.Label>
                                     <InputGroup className='inputgroups' id='inputgroups_email'>
