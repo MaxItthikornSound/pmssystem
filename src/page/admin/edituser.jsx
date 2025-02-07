@@ -15,11 +15,9 @@ import Form from 'react-bootstrap/Form';
 import Sidebar from '../component/sidebar/sidebar';
 import { department, updateuser } from '../component/connectdatabase';
 import { validateEmail, checkfilteremail, checkfilterenglish, checkfilterenglishspace } from '../component/fnc';
-import { alertsmall, alertsuccessredirect } from '../component/sweetalerttwo';
+import { alertsuccessredirect } from '../component/sweetalerttwo';
 import { CustomSelect } from '../../css/styles';
 import OpenBtn from '../component/sidebar/openbtn';
-// การนำเข้าและประกาศ Object ให้กับรูป Icon สำหรับ React
-import { MdOutlineFileDownload } from 'react-icons/md';
 
 const Edituser = () => {
     const location = useLocation();
@@ -30,15 +28,16 @@ const Edituser = () => {
      };
     useEffect(() => {
         document.title = 'Edit User';
-        !location.state ? navigate(-1) : null;
-        console.table(location.state);
+        if (!location.state) {
+            navigate(-1);
+        }
         get_database();
         get_location();
     }, []);
 
-    const [Department, setDepartment] = useState('');
-    const [UserType, setUserType] = useState('');
-    const [Level, setLevel] = useState('');
+    const [departments, setDepartments] = useState('');
+    const [userType, setUserType] = useState('');
+    const [level, setLevel] = useState('');
     const get_location = () => {
         const data = location.state;
         document.getElementById('nokid').value = data.EmployeeCode;
@@ -47,7 +46,7 @@ const Edituser = () => {
         document.getElementById('position').value = data.EmployeePosition;
         document.getElementById('evaluator').value = data.SupervisorCode;
         document.getElementById('email').value = data.EmployeeEmail;
-        setDepartment({ value: data.DepartmentID, label: data.DepartmentName });
+        setDepartments({ value: data.DepartmentID, label: data.DepartmentName });
         let UpperUserType = data.EmployeeUserType.charAt(0).toUpperCase() + data.EmployeeUserType.slice(1);
         setUserType({ value: data.EmployeeUserType, label: UpperUserType });
         let UpperLevel = data.EmployeeLevel.charAt(0).toUpperCase() + data.EmployeeLevel.slice(1);
@@ -55,7 +54,7 @@ const Edituser = () => {
     }
 
     // ดึงข้อมูลมาจาก database
-    const [Options_Department, setOptions_Department] = useState([]);
+    const [options_Department, setOptions_Department] = useState([]);
     const get_database = async () => {
         const data_department = await department();
         const transformedDepartment = data_department.map(item => ({ value: item.DepartmentID, label: item.DepartmentName }));
@@ -69,24 +68,29 @@ const Edituser = () => {
     const txtonchange = (event, type) => {
         if (event) {
             if (!event.target) {
-                if (type === 'department') { setDepartment(event); checkvaluenull('department', true); }
+                if (type === 'department') { setDepartments(event); checkvaluenull('department', true); }
                 else if (type === 'usertype') { setUserType(event); checkvaluenull('usertype', true); }
                 else if (type === 'level') { setLevel(event); checkvaluenull('level', true); }
-            } else {
-                if (event.target.value) {
-                    if (event.target.id === 'email') {
-                        validateEmail(event.target.value) ? checkvaluenull(event.target.id, true) : checkvaluenull(event.target.id, false);
-                    } else {
-                        checkvaluenull(event.target.id, true);
-                    }
+            } else if (event.target.value) {
+                if (event.target.id === 'email') {
+                    validateEmail(event.target.value) ? checkvaluenull(event.target.id, true) : checkvaluenull(event.target.id, false);
                 } else {
-                    checkvaluenull(event.target.id, false);
+                    checkvaluenull(event.target.id, true);
                 }
+            } else {
+                checkvaluenull(event.target.id, false);
             }
         } else {
-            if (type === 'department') { setDepartment(event); checkvaluenull('department', false); }
-            else if (type === 'usertype') { setUserType(event); checkvaluenull('usertype', false); }
-            else if (type === 'level') { setLevel(event); checkvaluenull('level', false); }
+            if (type === 'department') {
+                setDepartments(event);
+                checkvaluenull('department', false); 
+            } else if (type === 'usertype') { 
+                setUserType(event); 
+                checkvaluenull('usertype', false);
+            } else if (type === 'level') {
+                setLevel(event); 
+                checkvaluenull('level', false);
+            }
         }
     }
 
@@ -101,16 +105,16 @@ const Edituser = () => {
         const position = document.getElementById('position');
         const evaluator = document.getElementById('evaluator');
         const email = document.getElementById('email');
-        if (!nokid.value || !nameen.value || !nameth.value || !position.value || !evaluator.value || !Department || !UserType || !email.value || !Level) {
+        if (!nokid.value || !nameen.value || !nameth.value || !position.value || !evaluator.value || !departments || !userType || !email.value || !level) {
             !nokid.value ? checkvaluenull('nokid', false) : checkvaluenull('nokid', true);
             !nameen.value ? checkvaluenull('nameen', false) : checkvaluenull('nameen', true);
             !nameth.value ? checkvaluenull('nameth', false) : checkvaluenull('nameth', true);
             !position.value ? checkvaluenull('position', false) : checkvaluenull('position', true);
             !evaluator.value ? checkvaluenull('evaluator', false) : checkvaluenull('evaluator', true);
-            !Department ? checkvaluenull('department', false) : checkvaluenull('department', true);
-            !UserType ? checkvaluenull('usertype', false) : checkvaluenull('usertype', true);
+            !departments ? checkvaluenull('department', false) : checkvaluenull('department', true);
+            !userType ? checkvaluenull('usertype', false) : checkvaluenull('usertype', true);
             !email.value ? checkvaluenull('email', false) : checkvaluenull('email', true);
-            !Level ? checkvaluenull('level', false) : checkvaluenull('level', true);
+            !level ? checkvaluenull('level', false) : checkvaluenull('level', true);
         } else {
             const sendData = new FormData();
             sendData.append('id', location.state.EmployeeID);
@@ -119,10 +123,10 @@ const Edituser = () => {
             sendData.append('nameth', nameth.value);
             sendData.append('position', position.value);
             sendData.append('evaluator', evaluator.value);
-            sendData.append('department', Department.value);
-            sendData.append('usertype', UserType.value);
+            sendData.append('department', departments.value);
+            sendData.append('usertype', userType.value);
             sendData.append('email', email.value);
-            sendData.append('level', Level.value);
+            sendData.append('level', level.value);
             const result_updateuser = await updateuser(sendData);
             if (result_updateuser === 'update_success') {
                 
@@ -146,7 +150,7 @@ const Edituser = () => {
                 <Container className='colbody pt-4'>
                     <Row className='midpoint'>
                         <Col className='col-10 titletext'>
-                            <label>Edit User</label>
+                            <p>Edit User</p>
                         </Col>
                         
                         <Col md={12} className='inputgroups_yellow_border adduser' style={{paddingTop: '10px'}}>
@@ -207,7 +211,7 @@ const Edituser = () => {
                                     <Form>
                                         <Form.Label><b>UserType</b></Form.Label>
                                         <Form.Group className='pb-2 selectgruops' id='inputgroups_usertype'>
-                                            <Select options={Options_UserType} id='usertype' className='selectuser' styles={CustomSelect} isClearable='true' ref={clearselectusertype} value={UserType} onChange={(e) => txtonchange(e, 'usertype')} placeholder='UserType' />
+                                            <Select options={Options_UserType} id='usertype' className='selectuser' styles={CustomSelect} isClearable='true' ref={clearselectusertype} value={userType} onChange={(e) => txtonchange(e, 'usertype')} placeholder='UserType' />
                                         </Form.Group>
                                     </Form>
                                 </Col>
@@ -216,7 +220,7 @@ const Edituser = () => {
                                         <Form.Group>
                                             <Form.Label><b>Department</b></Form.Label>
                                             <Form.Group className='pb-2 selectgruops' id='inputgroups_department'>
-                                                <Select options={Options_Department} id='department' className='selectuser' styles={CustomSelect} isClearable='true' ref={clearselectdepartment} value={Department} onChange={(e) => txtonchange(e, 'department')} placeholder='Department' />
+                                                <Select options={options_Department} id='department' className='selectuser' styles={CustomSelect} isClearable='true' ref={clearselectdepartment} value={departments} onChange={(e) => txtonchange(e, 'department')} placeholder='Department' />
                                             </Form.Group>
                                         </Form.Group>
                                     </Form>
@@ -236,7 +240,7 @@ const Edituser = () => {
                                         <Form.Group>
                                             <Form.Label><b>Level</b></Form.Label>
                                                 <Form.Group className='pb-2 selectgruops' id='inputgroups_level'>
-                                                    <Select options={Options_Level} id='level' className='selectuser' styles={CustomSelect} isClearable='true' ref={clearselectlevel} value={Level} onChange={(e) => txtonchange(e, 'level')} placeholder='Level' />
+                                                    <Select options={Options_Level} id='level' className='selectuser' styles={CustomSelect} isClearable='true' ref={clearselectlevel} value={level} onChange={(e) => txtonchange(e, 'level')} placeholder='Level' />
                                                 </Form.Group>
                                         </Form.Group>
                                     </Form>
