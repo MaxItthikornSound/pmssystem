@@ -51,9 +51,9 @@ export const sendemail = async (email) => {
 }
 
 // ตรวจสอบหมายเลข OTP ที่ได้รับจาก User ว่าตรงกันหรือไม่ (ส่งไปหาระบบหลังบ้าน)
-export const sendotp = async (emailornokid, otp) => {
+export const sendotp = async (email, otp) => {
     try {
-        const response = await axios.post(ipaddress + import.meta.env.VITE_SENDOTP, { emailornokid: emailornokid, otp: otp });
+        const response = await axios.post(ipaddress + import.meta.env.VITE_SENDOTP, { email: email, otp: otp });
         return response.data;
     } catch (error) {
         console.error(error);
