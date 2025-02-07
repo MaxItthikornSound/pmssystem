@@ -2,8 +2,7 @@
 import { useEffect, useState } from 'react'
 import Select from 'react-select';
 import { jwtDecode } from 'jwt-decode';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 // นำเข้า CSS ที่เกี่ยวข้องกับ TextLayer
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';  // เพิ่มคำสั่งนี้เพื่อแก้ปัญหาข้อความไม่แสดง
