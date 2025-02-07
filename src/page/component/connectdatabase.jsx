@@ -3,6 +3,19 @@ import { jwtDecode } from 'jwt-decode';
 
 const ipaddress = import.meta.env.VITE_IPADDRESS;
 // ---------------------------------- ทั้งหมด -----------------------------------------
+// เช็คการเข้าสู่ระบบว่าได้ล็อกอินไปแล้วกี่ชม. (จำกัดแค่ไม่ได้เข้า 1 ชั่วโมงแล้วลบ Session)
+const SESSION_TIMEOUT_MS = 1 * 60 * 60 * 1000; // 1 ชั่วโมง
+export const checkSessionExpiration = () => {
+    const lastLogin = localStorage.getItem(import.meta.env.VITE_LASTLOGIN);
+    if (!lastLogin) return; // ถ้าไม่มีค่า lastLogin ให้ข้ามไป
+    const now = Date.now();
+    if (now - parseInt(lastLogin) > SESSION_TIMEOUT_MS) {
+        localStorage.removeItem(import.meta.env.VITE_TOKEN);
+        localStorage.removeItem(import.meta.env.VITE_LASTLOGIN);
+        window.location.href = '/'; // เปลี่ยนเส้นทางไปหน้า Login
+    }
+};
+
 // เข้าสู่ระบบสำหรับการประเมิน (ส่งไปหาระบบหลังบ้าน)
 export const logins = async (emailornokid, password) => {
     try {
