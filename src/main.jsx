@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/style.css';
 import 'react-calendar/dist/Calendar.css';
+
+import { checkSessionExpiration } from './page/component/connectdatabase';
 
 // ทั้งหมด
 import Index from './page/all/index';
@@ -35,41 +37,47 @@ import Manageemail from './page/admin/manageemail';
 // หน้า Not Found
 import Notfound from './notfound';
 
-createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
-        <Routes>
-            {/* ทั้งหมด */}
-            <Route element={<AuthGuard role='login' />}>
-                <Route path='/' element={<Index />}></Route>
-                <Route path='/forgottenpassword' element={<Forgottenpassword />}></Route>
-                <Route path='/newpassword' element={<Newpassword />}></Route>
-                <Route path='/otpsend' element={<Otpsend />}></Route>
-            </Route>
+const Main = () => {
+    useEffect(() => checkSessionExpiration());
+    
+    return ( 
+        <BrowserRouter>
+            <Routes>
+                {/* ทั้งหมด */}
+                <Route element={<AuthGuard role='login' />}>
+                    <Route path='/' element={<Index />}></Route>
+                    <Route path='/forgottenpassword' element={<Forgottenpassword />}></Route>
+                    <Route path='/newpassword' element={<Newpassword />}></Route>
+                    <Route path='/otpsend' element={<Otpsend />}></Route>
+                </Route>
 
-            {/* ฝั่งของ User */}
-            <Route element={<AuthGuard role='user' />}>
-                <Route path='/home' element={<Home />}></Route>
-                <Route path='/self' element={<Self />}></Route>
-                <Route path='/manage' element={<Manage />}></Route>
-                <Route path='/staff' element={<Staff />}></Route>
-            </Route>
+                {/* ฝั่งของ User */}
+                <Route element={<AuthGuard role='user' />}>
+                    <Route path='/home' element={<Home />}></Route>
+                    <Route path='/self' element={<Self />}></Route>
+                    <Route path='/manage' element={<Manage />}></Route>
+                    <Route path='/staff' element={<Staff />}></Route>
+                </Route>
 
-            {/* ฝั่งของ Admin */}
-            <Route element={<AuthGuard role='admin' />}>
-                <Route path='/manageuser' element={<ManageUser />}></Route>
-                <Route path='/adduser' element={<Adduser />}></Route>
-                <Route path='/addcsvfileuser' element={<Addcsvfileuser />}></Route>
-                <Route path='/edituser' element={<Edituser />}></Route>
-                <Route path='/dashboard' element={<Dashboard />}></Route>
-                <Route path='/manageevent' element={<Manageevent />}></Route>
-                <Route path='/addevent' element={<Addevent />}></Route>
-                <Route path='/editevent' element={<Editevent />}></Route>
-                <Route path='/manageeval' element={<Manageeval />}></Route>
-                <Route path='/manageemail' element={<Manageemail />}></Route>
-            </Route>
+                {/* ฝั่งของ Admin */}
+                <Route element={<AuthGuard role='admin' />}>
+                    <Route path='/manageuser' element={<ManageUser />}></Route>
+                    <Route path='/adduser' element={<Adduser />}></Route>
+                    <Route path='/addcsvfileuser' element={<Addcsvfileuser />}></Route>
+                    <Route path='/edituser' element={<Edituser />}></Route>
+                    <Route path='/dashboard' element={<Dashboard />}></Route>
+                    <Route path='/manageevent' element={<Manageevent />}></Route>
+                    <Route path='/addevent' element={<Addevent />}></Route>
+                    <Route path='/editevent' element={<Editevent />}></Route>
+                    <Route path='/manageeval' element={<Manageeval />}></Route>
+                    <Route path='/manageemail' element={<Manageemail />}></Route>
+                </Route>
 
-            {/* สำหรับการเข้า URL ที่ไม่มีให้ */}
-            <Route path='*' element={<Notfound />}></Route>
-        </Routes>
-    </BrowserRouter>
-)
+                {/* สำหรับการเข้า URL ที่ไม่มีให้ */}
+                <Route path='*' element={<Notfound />}></Route>
+            </Routes>
+        </BrowserRouter>
+    )
+}
+
+createRoot(document.getElementById('root')).render(<Main />);
