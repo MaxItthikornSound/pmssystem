@@ -30,17 +30,19 @@ const Home = () =>{
         loading()
         const data_event = await view_event();
         const activeEvents = []; // เก็บเหตุการณ์ที่ยังไม่หมดเวลา
-        data_event.map(data => {
-            // แปลงวันที่สิ้นสุดของเหตุการณ์เป็น Moment object
-            const endDate = moment(data.EventEndDate, 'D MMMM YYYY').endOf('day');
-            // วันที่ปัจจุบัน
-            const currentDate = moment();
-    
-            // ตรวจสอบว่าเหตุการณ์ยังไม่หมดเวลา
-            if (currentDate.isBefore(endDate)) {
-                activeEvents.push(data);  // เฉพาะเมื่อเหตุการณ์ยังไม่หมดเวลา
-            }
-        })
+        if (data_event) {
+            data_event.map(data => {
+                // แปลงวันที่สิ้นสุดของเหตุการณ์เป็น Moment object
+                const endDate = moment(data.EventEndDate, 'D MMMM YYYY').endOf('day');
+                // วันที่ปัจจุบัน
+                const currentDate = moment();
+        
+                // ตรวจสอบว่าเหตุการณ์ยังไม่หมดเวลา
+                if (currentDate.isBefore(endDate)) {
+                    activeEvents.push(data);  // เฉพาะเมื่อเหตุการณ์ยังไม่หมดเวลา
+                }
+            })
+        }
         // ตั้งค่าข้อมูลเหตุการณ์ที่ยังไม่หมดเวลา
         setEvent(activeEvents);
         loading('success');
