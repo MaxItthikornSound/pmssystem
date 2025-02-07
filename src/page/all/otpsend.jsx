@@ -11,7 +11,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 
 // การนำเข้าหน้า Page เพื่อ Link ไปหน้าถัดไป และการ Include ไฟล์เสริมที่เราสร้างขึ้นมา
-import Navbar from '../component/navbar/navbaruser';
+import Navbar from '../component/navbar/navbar';
 import { checkfilternumber } from '../component/fnc';
 import { sendotp } from '../component/connectdatabase';
 import { alertsmall } from '../component/sweetalerttwo';
