@@ -96,11 +96,11 @@ const staff = () => {
         // ระบุช่วงวันที่ของรอบที่เลือก
         const [cycleType, year] = selectedOption.value.split('-'); // แยกรหัสรอบ
         const startDate = cycleType === '01' 
-            ? new Date(`${year}-06-01`) // เริ่ม 1 มิถุนายน
-            : new Date(`${year}-11-01`); // เริ่ม 1 พฤศจิกายน
+            ? new Date(`${year}-04-01`) // เริ่ม 1 เมษายน
+            : new Date(`${year}-10-01`); // เริ่ม 1 ตุลาคม
         const endDate = cycleType === '01' 
-            ? new Date(`${year}-08-31`) // สิ้นสุด 31 สิงหาคม
-            : new Date(`${+year + 1}-01-31`); // สิ้นสุด 31 มกราคมปีถัดไป
+            ? new Date(`${year}-09-30`) // สิ้นสุด 31 กันยายน
+            : new Date(`${+year + 1}-03-31`); // สิ้นสุด 31 มีนาคมปีถัดไป
         // กรองข้อมูลที่อยู่ในช่วงวันที่
         const filteredData = Cycle[selectedOption.value].filter(item => {
             const itemDate = new Date(item.DateSelfPart1 || item.DateSelfPart2);
