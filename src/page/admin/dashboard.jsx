@@ -119,7 +119,8 @@ const Dashboard = () => {
 
     // ฟังก์ชันดาวน์โหลดไฟล์ CSV
     const downloadCSV = (data, filename = 'StaffSummeryExport_' + Round + '.csv') => {
-        const result_data = data.map(row => ({ EmployeeID: row.EmployeeID, EmployeeCode: row.EmployeeCode, EmployeeFullNameEN: row.EmployeeFullNameEN, EmployeeFullNameTH: row.EmployeeFullNameTH, EmployeePosition: row.EmployeePosition, Supervisor: row.NameSuperVisor, EmployeeDepartment: row.DepartmentName, EmployeeLevel: row.EmployeeLevel, EmployeeUserType: row.EmployeeUserType, TotalPart1Self: parseFloat(row.TotalPart1Self).toFixed(1), TotalPart2Self: parseFloat(row.TotalPart2Self).toFixed(1), TotalPart1Manager: parseFloat(row.TotalPart2Manager).toFixed(1), TotalPart2Manager: parseFloat(row.TotalPart2Manager).toFixed(1), EvaluationRound:  SelectedCycle}));
+        console.log(data);
+        const result_data = data.map(row => ({ EmployeeID: row.EmployeeID, EmployeeCode: row.EmployeeCode, EmployeeFullNameEN: row.EmployeeFullNameEN, EmployeeFullNameTH: row.EmployeeFullNameTH, EmployeePosition: row.EmployeePosition, Supervisor: row.NameSuperVisor, EmployeeDepartment: row.DepartmentName, EmployeeLevel: row.EmployeeLevel, EmployeeUserType: row.EmployeeUserType, TotalPart1Self: parseFloat(row.TotalPart1Self).toFixed(1), TotalPart2Self: parseFloat(row.TotalPart2Self).toFixed(1), TotalPart1Manager: parseFloat(row.TotalPart2Manager).toFixed(1), TotalPart2Manager: parseFloat(row.TotalPart2Manager).toFixed(1), EvaluationRound: SelectedCycle, PartStrenght: row.PartStrenght, PartTopic: row.PartTopic, PartHTCG: row.PartHTCG, PartPeriod: row.PartPeriod, Part5Comment: row.PartComment}));
         console.log(result_data);
         const csvContent = '\uFEFF' + convertToCSV(result_data); // เพิ่ม BOM (Byte Order Mark) ที่จุดเริ่มต้น
         const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' }); // สร้าง Blob จาก CSV
