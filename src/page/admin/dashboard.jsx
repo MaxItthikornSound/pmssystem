@@ -7,11 +7,6 @@ import Select from 'react-select';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Form from 'react-bootstrap/Form';
-import Table from 'react-bootstrap/Table';
-import Collapse from 'react-bootstrap/Collapse';
 
 // การนำเข้าหน้า Page เพื่อ Link ไปหน้าถัดไป และการ Include ไฟล์เสริมที่เราสร้างขึ้นมา
 import Sidebar from '../component/sidebar/sidebar';
@@ -23,9 +18,6 @@ import { CustomSelectStaff } from '../../css/styles';
 
 // การนำเข้าและประกาศ Object ให้กับไฟล์สำหรับรูปภาพ
 import XLS from '../../assets/image/xls.png';
-
-// การนำเข้าและประกาศ Object ให้กับรูป Icon สำหรับ React
-import { BsArrow90DegDown , BsSearch, BsArrowReturnLeft } from 'react-icons/bs';
 
 const Dashboard = () => {
     const navigate = useNavigate();
