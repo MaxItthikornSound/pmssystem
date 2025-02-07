@@ -763,13 +763,12 @@ h2 {
     background: #ffffff;
     border-radius: 40px;
     box-shadow: 0px 0px 50px 5px rgba(128, 128, 128, 0.8);
-
     padding: 1rem;
     width: 30em;
 }
 
 .item.second-column {
-    margin-top: 22%;
+    margin-top: 17%;
 }
 
 .detailevent .modal-dialog .modal-content {
