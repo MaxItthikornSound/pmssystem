@@ -1,6 +1,5 @@
 // การนำเข้าและประกาศ Object เมื่อนำมาใช้งานของ Framework สำหรับ React
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 // การนำเข้าและประกาศ Object ให้กับไฟล์สำหรับ React Bootstrap 5
@@ -20,7 +19,6 @@ import { CustomSelectStaff } from '../../css/styles';
 import XLS from '../../assets/image/xls.png';
 
 const Dashboard = () => {
-    const navigate = useNavigate();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const toggleSidebar = () => {
        setIsSidebarOpen(!isSidebarOpen);
