@@ -1,5 +1,5 @@
 // การนำเข้าและประกาศ Object เมื่อนำมาใช้งานของ Framework สำหรับ React
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 
 // การนำเข้าและประกาศ Object ให้กับไฟล์สำหรับ React Bootstrap 5
